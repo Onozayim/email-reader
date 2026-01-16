@@ -64,7 +64,7 @@ fn get_old_number(num: u32) -> anyhow::Result<Option<u32>> {
     let old_number = if contents.is_empty() {
         0
     } else {
-        contents.parse::<u32>()?
+        contents.trim().parse::<u32>()?
     };
 
     if old_number == num {
