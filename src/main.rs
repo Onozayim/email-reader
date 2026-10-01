@@ -406,7 +406,7 @@ async fn fetch_inbox_top() -> anyhow::Result<Option<String>> {
             messages_to_send.push(Email {
                 subject: subject.to_string(),
                 body: body.to_string(),
-                from_email: from.to_string(),
+                from_email: from.trim().to_string(),
                 received_at: m.internal_date().unwrap().to_rfc3339(),
             });
 
